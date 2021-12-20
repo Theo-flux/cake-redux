@@ -1,0 +1,3 @@
+const BUY_ICECREAM = "BUY-ICECREAM"
+
+export default BUY_ICECREAM
