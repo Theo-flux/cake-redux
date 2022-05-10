@@ -1,7 +1,5 @@
-import buyCake from './features/cake/cakeAction'
-import buyIceCream from './features/icecream/iceCreamAction'
-import buyBurger from './features/burger/burgerAction'
-import isBroke from './features/broke/brokeAction'
-
-
-export  {buyCake, buyIceCream, buyBurger, isBroke} 
+export { default as buyCake } from "./features/cake/cakeAction"
+export { default as buyIceCream } from "./features/icecream/iceCreamAction"
+export { default as buyBurger } from "./features/burger/burgerAction"
+export { default as isBroke } from "./features/broke/brokeAction"
+export * from "./features/users/userAction"
