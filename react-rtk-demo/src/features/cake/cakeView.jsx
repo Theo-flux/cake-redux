@@ -3,9 +3,9 @@ import React from 'react'
 function cakeView() {
   return (
     <div>
-        <h2>Number of cakes: </h2>
-        <button>order</button>
-        <button>restock</button>
+        <h2>Number of cakes - </h2>
+        <button>order cake</button>
+        <button>restock cake</button>
     </div>
   )
 }
