@@ -1,13 +1,13 @@
 import React from 'react'
 
-function cakeView() {
+function CakeView() {
   return (
     <div>
         <h2>Number of cakes - </h2>
-        <button>order cake</button>
+        <button style={{marginRight:'15px'}}>order cake</button>
         <button>restock cake</button>
     </div>
   )
 }
 
-export default cakeView
+export default CakeView
