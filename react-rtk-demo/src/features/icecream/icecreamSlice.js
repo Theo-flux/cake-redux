@@ -3,7 +3,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    numOfIceCream: 54
+    numOfIceCreams: 54
 }
 
 const icecreamSlice = createSlice({
@@ -11,10 +11,10 @@ const icecreamSlice = createSlice({
     initialState,
     reducers: {
         ordered: (state) => {
-            state.numOfIceCream--
+            state.numOfIceCreams--
         },
         restocked: (state, action) => {
-            state.numOfIceCream += action.payload
+            state.numOfIceCreams += action.payload
         }
     },
     // extraReducers: {
