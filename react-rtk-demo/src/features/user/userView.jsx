@@ -3,7 +3,7 @@ import React from 'react'
 function userView() {
   return (
     <div>
-        User
+        <h2>List of users:</h2>
     </div>
   )
 }
