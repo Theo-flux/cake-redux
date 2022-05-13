@@ -1,9 +1,10 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { InitialState, User } from './types'
 
-const url = 'https://jsonplaceholder.typicode.com/users'
+const url: string = 'https://jsonplaceholder.typicode.com/users'
 
-const initialState = {
+const initialState: InitialState = {
     loading: false,
     users: [],
     error: ''
@@ -19,12 +20,13 @@ const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
 const userSlice =  createSlice({
     name: 'user',
     initialState: initialState,
+    reducers: {},
     extraReducers: builder => {
         builder.addCase(fetchUsers.pending, (state) => {
             state.loading = true
         })
 
-        builder.addCase(fetchUsers.fulfilled, (state, action) => {
+        builder.addCase(fetchUsers.fulfilled, (state, action: PayloadAction<User[]>) => {
             state.loading = false
             state.users = action.payload
             state.error= ''
@@ -33,7 +35,7 @@ const userSlice =  createSlice({
         builder.addCase(fetchUsers.rejected, (state, action) => {
             state.loading = false
             state.users = []
-            state.error = action.error.message
+            state.error = action.error.message || 'Something went wrong!'
         })
     }
 })
