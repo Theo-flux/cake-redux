@@ -10,7 +10,7 @@ const icecreamSlice = createSlice({
     name: 'icecream',
     initialState,
     reducers: {
-        ordered: (state) => {
+        ordered: (state, action) => {
             state.numOfIceCreams--
         },
         restocked: (state, action) => {
