@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '../../app/hooks'
 import { icecreamActions } from './icecreamSlice'
 
 
 function IcecreamView() {
   const [count, setCount] = useState(1)
-  const numOfIceCreams = useSelector((state) => state.icecream.numOfIceCreams)
-  const dispatch = useDispatch()
+  const numOfIceCreams = useAppSelector((state) => state.icecream.numOfIceCreams)
+  const dispatch = useAppDispatch()
   const {ordered, restocked} = icecreamActions
 
-  function handleChange(e){
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>){
     setCount(parseInt(e.target.value))
   }
 
